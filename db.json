@@ -1,0 +1,30 @@
+{
+    "cart": [
+        {"productID": 2, "quantity": 10},
+        {"productID": 3, "quantity": 30}
+    ],
+
+
+    "products": [{
+        "id": 1,
+        "price": 1000,
+        "name": "MacBook Pro"
+      },
+      {
+        "id": 2,
+        "price": 500,
+        "name": "iPad Pro"
+      },
+      {
+        "id": 3,
+        "price": 900,
+        "name": "Apple iPhone"
+      },
+      {
+        "id": 4,
+        "price": 300,
+        "name": "Apple Watch"
+      }
+    ]
+     
+} 

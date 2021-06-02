@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StockBranchComponent } from './stock-branch/stock-branch.component';
 import { StockArrayComponent } from './stock-array/stock-array.component';
 import { StockSelectorComponent } from './stock-selector/stock-selector.component';
+import { StockInventoryService } from './stock-inventory.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,8 +19,10 @@ import { StockSelectorComponent } from './stock-selector/stock-selector.componen
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+  providers: [StockInventoryService],
   exports: [StockInventoryComponent]
 })
 export class StockInventoryModule { }

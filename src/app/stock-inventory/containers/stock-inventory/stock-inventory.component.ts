@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder } from '@angular/forms';
+import { Observable, forkJoin } from 'rxjs';
+import { Item } from '../../models/item.interface';
 import { Product } from '../../models/product.interface';
+import { StockInventoryService } from '../../stock-inventory.service';
 
 
 
@@ -12,31 +15,10 @@ import { Product } from '../../models/product.interface';
 })
 export class StockInventoryComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private StockInventoryService: StockInventoryService) { }
 
-
-  products: Product[] = [
-    {
-      id: 1,
-      price: 1000,
-      name: 'MacBook Pro'
-    },
-    {
-      id: 2,
-      price: 500,
-      name: 'iPad Pro'
-    },
-    {
-      id: 3,
-      price: 900,
-      name: 'Apple iPhone'
-    },
-    {
-      id: 4,
-      price: 300,
-      name: 'Apple Watch'
-    }
-  ]
+  productMap: Map<number, Product>;
+  products: Product[];
   
   form = this.fb.group({
     branch: this.fb.group({
@@ -48,8 +30,6 @@ export class StockInventoryComponent implements OnInit {
 
     stock: this.fb.array(
       [  
-        this.getStock({productID: 2, quantity: 10}),
-        this.getStock({productID: 3, quantity: 30})
       ]
     )
   });
@@ -60,8 +40,39 @@ export class StockInventoryComponent implements OnInit {
         quantity: stock.quantity || 10
       })
     }
-  ngOnInit(): void {
+  ngOnInit() {
+    const cart = this.StockInventoryService.getCart();
+    const product = this.StockInventoryService.getProduct();
+
+
+    // cart.subscribe(res => {
+    //   console.log(res);
+    // });
+
+    // product.subscribe(res => {
+    //   console.log(res);
+    // });
+
+    // combining 2 observables into 1 using forkJoin
+
+    const values$ = forkJoin(cart, product).subscribe(([cart, product]) => {
+      console.log('cart', cart);
+      console.log('product', product);
+      const myMap = product.map<[number, Product]>(prod => [prod.id, prod]); // creating a map with product id and product itself
+      console.log('generated map', myMap);
+
+      this.productMap = new Map<number, Product>(myMap); // copying this map into our productMap so we can send this out to child selector
+
+
+      console.log('final product map', this.productMap);
+
+      this.products = product;
+      cart.forEach(item => this.addOrder(item));
+
+    });
+
   }
+
 
   onSubmit(){
     console.log(this.form.value);

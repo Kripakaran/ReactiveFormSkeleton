@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
+import { Product } from '../models/product.interface';
 
 
 @Component({
@@ -14,10 +15,18 @@ export class StockArrayComponent implements OnInit {
   @Input()
   parent: FormGroup;
 
+  @Input()
+  map: Map<number, Product>;
+  
   @Output()
   remove: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
+  }
+
+  getProductById(id:number){
+    return this.map.get(id); 
+  // return is very important here lol
   }
 
   get stocks(){

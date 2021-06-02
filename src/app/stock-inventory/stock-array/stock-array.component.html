@@ -7,10 +7,16 @@
 
             <div [formGroupName] = "i"> 
                 <!-- property bind to index since this is an array of formgroups and each index is a formgroup of its own -->
-                
-                    {{ item.value.productID}}
-                
 
+
+                    <!-- earlier version that shows only ID -->
+                    <!-- {{ item.value.productID }} -->
+
+                    <!-- new version that shows name and price also -->
+
+
+                    {{ getProductById(item.value.productID)?.name }}
+                
                 
                     <!-- providing ability to change quantity even after adding -->
                     <input type = "number" formControlName = "quantity" step = 10 min = 10 max = 1000>
