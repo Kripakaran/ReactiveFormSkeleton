@@ -1,0 +1,25 @@
+<div [formGroup] = "parent">
+    <div formGroupName = "selector">
+        <div>
+            Product:
+            <select formControlName = "productID">
+                <option value = "">Select Product</option>
+                <option *ngFor = "let product of products; index as i" 
+                [value] = "product.id">
+                    {{ product.name}}
+                </option>
+
+            </select>
+
+            Quantity:
+            <input type = "number" formControlName = "quantity" step = 10 min = 10 max = 1000>
+
+            <button type = "button" (click)= "handleOrder()">
+                Order Stock
+            </button>
+        </div>
+
+ 
+
+    </div>
+</div>

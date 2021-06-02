@@ -1,0 +1,27 @@
+<h3>Stock Collection</h3>
+
+<div [formGroup] = "parent">
+    <div formArrayName = "stock">
+        <div *ngFor = "let item of stocks; let i = index;">
+            <!-- how do you get this stocks? go to ts file and see how -->
+
+            <div [formGroupName] = "i"> 
+                <!-- property bind to index since this is an array of formgroups and each index is a formgroup of its own -->
+                
+                    {{ item.value.productID}}
+                
+
+                
+                    <!-- providing ability to change quantity even after adding -->
+                    <input type = "number" formControlName = "quantity" step = 10 min = 10 max = 1000>
+               
+
+                <button type = "button" (click) = "handleRemove(item, i)">
+                    Remove
+                </button>
+
+            </div>
+            
+        </div>
+</div>
+</div>

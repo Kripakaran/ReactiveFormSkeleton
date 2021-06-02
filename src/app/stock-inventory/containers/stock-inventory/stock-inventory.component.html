@@ -1,0 +1,32 @@
+<h1> Stock Inventory App </h1>
+
+<form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+    <app-stock-branch
+    [parent] = "form">
+    </app-stock-branch>
+
+    <app-stock-selector
+    [parent] = "form"
+    [products] = "products"
+    (order) = "addOrder($event)"
+    >
+    </app-stock-selector>
+
+    <app-stock-array
+    [parent] = "form"
+    (remove) = "removeOrder($event)">
+    </app-stock-array>
+
+
+    <button type = "submit">
+        Submit
+    </button>
+
+
+
+
+    <pre>
+        {{ form.value | json }}
+    </pre>
+</form>
