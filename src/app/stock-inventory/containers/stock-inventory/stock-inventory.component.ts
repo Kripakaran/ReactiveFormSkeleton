@@ -19,6 +19,7 @@ export class StockInventoryComponent implements OnInit {
 
   productMap: Map<number, Product>;
   products: Product[];
+  total: number;
   
   form = this.fb.group({
     branch: this.fb.group({
@@ -39,6 +40,31 @@ export class StockInventoryComponent implements OnInit {
         productID : stock.productID || '',
         quantity: stock.quantity || 10
       })
+    }
+
+
+    calculateTotal(value: Item[]){
+      
+      const total = value.reduce((prev,next) => {
+
+        let val = next.productID;
+        if (typeof val === 'string'){
+          val = parseInt(val)
+        }
+        const val2 = this.productMap.get(val);
+        let val4 = 0;
+        // console.log(prev);
+        if(val2){
+          val4 = val2.price;
+        }
+        // console.log(val2);
+        // console.log(val4);
+        return (prev + (next.quantity * val4));
+      }, 0);
+
+
+      
+      this.total = total;
     }
   ngOnInit() {
     const cart = this.StockInventoryService.getCart();
@@ -68,6 +94,12 @@ export class StockInventoryComponent implements OnInit {
 
       this.products = product;
       cart.forEach(item => this.addOrder(item));
+      this.calculateTotal(this.form.get('stock')?.value);
+
+      this.form.get('stock')?.valueChanges.subscribe(res => {
+        // console.log(res);
+        return this.calculateTotal(res);
+      });
 
     });
 
@@ -80,8 +112,8 @@ export class StockInventoryComponent implements OnInit {
 
 
   addOrder(stock: {productID?: number, quantity?: number} ){
-    console.log(typeof(stock.productID));
-    console.log(stock);
+    // console.log(typeof(stock.productID));
+    // console.log(stock);
     const control = this.form.get('stock') as FormArray;
     control.push(this.getStock(stock));
 

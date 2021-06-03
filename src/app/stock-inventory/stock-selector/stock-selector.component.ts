@@ -23,8 +23,14 @@ export class StockSelectorComponent implements OnInit {
   @Output()
   order: EventEmitter<any> = new EventEmitter();
 
-  handleOrder(){
+  handleOrder() {
     this.order.emit(this.parent.get('selector')?.value);
+    console.log(this.parent.get('selector'));
+
+    this.parent.get('selector')?.reset({
+      productID: '',
+      quantity: 10
+    })
     console.log(this.order);
   }
 

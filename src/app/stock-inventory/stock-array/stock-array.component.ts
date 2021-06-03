@@ -29,7 +29,7 @@ export class StockArrayComponent implements OnInit {
       id = parseInt(id)
     }
 
-    console.log(typeof(id));
+    // console.log(typeof(id));
     return this.map.get(id); 
 
   // return is very important here lol

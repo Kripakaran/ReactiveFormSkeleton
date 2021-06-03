@@ -4,8 +4,7 @@
     <div formArrayName = "stock">
         <div *ngFor = "let item of stocks; let i = index;">
             <!-- how do you get this stocks? go to ts file and see how -->
-            {{ item.value.productID }}
-            <div [formGroupName] = "i"> 
+                <div [formGroupName] = "i"> 
                 <!-- property bind to index since this is an array of formgroups and each index is a formgroup of its own -->
 
 
