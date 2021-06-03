@@ -24,7 +24,8 @@ export class StockSelectorComponent implements OnInit {
   order: EventEmitter<any> = new EventEmitter();
 
   handleOrder(){
-    this.order.emit(this.parent.get('selector')?.value)
+    this.order.emit(this.parent.get('selector')?.value);
+    console.log(this.order);
   }
 
   ngOnInit(): void {

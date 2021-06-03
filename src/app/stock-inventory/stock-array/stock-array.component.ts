@@ -24,8 +24,14 @@ export class StockArrayComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getProductById(id:number){
+  getProductById(id: any){
+    if (typeof id === 'string'){
+      id = parseInt(id)
+    }
+
+    console.log(typeof(id));
     return this.map.get(id); 
+
   // return is very important here lol
   }
 

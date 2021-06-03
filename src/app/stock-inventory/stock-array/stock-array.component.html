@@ -4,7 +4,7 @@
     <div formArrayName = "stock">
         <div *ngFor = "let item of stocks; let i = index;">
             <!-- how do you get this stocks? go to ts file and see how -->
-
+            {{ item.value.productID }}
             <div [formGroupName] = "i"> 
                 <!-- property bind to index since this is an array of formgroups and each index is a formgroup of its own -->
 
@@ -14,9 +14,14 @@
 
                     <!-- new version that shows name and price also -->
 
+                   
 
+                    
                     {{ getProductById(item.value.productID)?.name }}
+
+                    {{ getProductById(item.value.productID)?.price }}
                 
+                    {{ getProductById(item.value.productID)?.id }}
                 
                     <!-- providing ability to change quantity even after adding -->
                     <input type = "number" formControlName = "quantity" step = 10 min = 10 max = 1000>

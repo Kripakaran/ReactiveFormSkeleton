@@ -56,15 +56,15 @@ export class StockInventoryComponent implements OnInit {
     // combining 2 observables into 1 using forkJoin
 
     const values$ = forkJoin(cart, product).subscribe(([cart, product]) => {
-      console.log('cart', cart);
-      console.log('product', product);
+      // console.log('cart', cart);
+      // console.log('product', product);
       const myMap = product.map<[number, Product]>(prod => [prod.id, prod]); // creating a map with product id and product itself
-      console.log('generated map', myMap);
+      // console.log('generated map', myMap);
 
       this.productMap = new Map<number, Product>(myMap); // copying this map into our productMap so we can send this out to child selector
 
 
-      console.log('final product map', this.productMap);
+      // console.log('final product map', this.productMap);
 
       this.products = product;
       cart.forEach(item => this.addOrder(item));
@@ -80,9 +80,11 @@ export class StockInventoryComponent implements OnInit {
 
 
   addOrder(stock: {productID?: number, quantity?: number} ){
-    // console.log(event);
+    console.log(typeof(stock.productID));
+    console.log(stock);
     const control = this.form.get('stock') as FormArray;
     control.push(this.getStock(stock));
+
   }
 
   removeOrder({item, i}: {item:any, i:number}){
