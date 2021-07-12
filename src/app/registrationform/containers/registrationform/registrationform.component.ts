@@ -17,6 +17,31 @@ export class RegistrationformComponent implements OnInit {
     personalInfo: this.fb.group({
       firstName: '',
       lastName: ''
+    }),
+    addressInfo: this.fb.group({
+      streetName: '',
+      aptNumber: '',
+      city: '',
+      state: '',
+      zipCode: ''
+    }),
+    employmentInfo: this.fb.group({
+      companyName: '',
+      position: '',
+      salary: '',
+    }),
+    educationInfo: this.fb.group({
+      univName: '',
+      degree: '',
+      gpa: ''
+    }),
+    relationshipInfo: this.fb.group({
+      status: '',
+      dependants: ''
+    }),
+    skills: this.fb.group({
+      hobbies: '',
+      skills: ''
     })
   });
 

@@ -1,0 +1,21 @@
+<p>personalinformation works!</p>
+
+
+<div [formGroup] = "parent">
+
+<div formGroupName = "personalInfo">
+    <div>
+        First Name:
+        <input type = "text" formControlName = "firstName">
+    </div>
+
+    <div>
+        Last Name:
+        <input type = "text" formControlName = "lastName">
+    </div>
+</div>
+</div>
+
+
+
+<!-- <pre>{{ parent.value | json }}</pre> -->
