@@ -1,0 +1,21 @@
+<p>registrationform works!</p>
+
+
+<form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+<div formGroupName = "personalInfo">
+    <div>
+        First Name:
+        <input type = "text" formControlName = "firstName">
+    </div>
+
+    <div>
+        Last Name:
+        <input type = "text" formControlName = "lastName">
+    </div>
+</div>
+
+<button type = "submit">
+    Submit
+</button>
+
+</form>
