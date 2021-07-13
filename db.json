@@ -2,7 +2,8 @@
   "posts": {
     "personalInfo": {
       "firstName": "Kripakaran",
-      "lastName": "Prabhakaran"
+      "lastName": "Prabhakaran",
+      "dob": "1997-10-21"
     },
     "addressInfo": {
       "streetName": "721 W 30th Street",
@@ -12,22 +13,22 @@
       "zipCode": 90007
     },
     "employmentInfo": {
-      "companyName": "bny",
-      "position": "sde",
-      "salary": 12000
+      "companyName": "dasd",
+      "position": "",
+      "salary": ""
     },
     "educationInfo": {
-      "univName": "usc",
-      "degree": "ms",
-      "gpa": 3.5
+      "univName": "",
+      "degree": "",
+      "gpa": ""
     },
     "relationshipInfo": {
-      "status": "single",
-      "dependants": 0
+      "status": "",
+      "dependants": ""
     },
     "skills": {
-      "hobbies": "music football",
-      "skills": "full stack dev"
+      "hobbies": "",
+      "skills": ""
     }
   }
 }

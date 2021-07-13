@@ -6,7 +6,12 @@
         <h1> Reactive Registration Form</h1>
 
     
-        <div><app-personalinformation [parent]="form"></app-personalinformation></div>
+        <div><app-personalinformation [parent]="form" (dateofbirth) = "calculateAge($event)"></app-personalinformation> 
+        <div *ngIf = "age">
+            {{ age }} years old
+        </div>
+        
+        </div>
 
         <div><app-addressinformation [parent]="form"></app-addressinformation></div>
 

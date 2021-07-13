@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PersonalInfo } from '../../models/personalInfo';
 import { Register } from '../../models/register';
 import { RegistrationformService } from './registrationform.service';
 
@@ -20,12 +21,16 @@ export class RegistrationformComponent implements OnInit {
 
   registered: Register;
 
+  birthday: Date;
+  age: number;
+
   submitted: boolean = false;
 
   form = this.fb.group({
     personalInfo: this.fb.group({
       firstName: this.fb.control('', [Validators.required]),
-      lastName: ''
+      lastName: '',
+      dob: ''
     }),
     addressInfo: this.fb.group({
       streetName: '',
@@ -62,6 +67,14 @@ export class RegistrationformComponent implements OnInit {
     this.registrationform.postDetails(this.registered).subscribe(res=>{
       console.log(res);
     });
+  }
+
+  calculateAge(personalInfo: PersonalInfo){
+    this.birthday = personalInfo.dob;
+    console.log(this.birthday);
+    var timeDiff = Math.abs(Date.now() - new Date(this.birthday).valueOf());
+    this.age = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+    console.log(this.age); 
   }
 
 
