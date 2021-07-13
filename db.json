@@ -1,0 +1,33 @@
+{
+  "posts": {
+    "personalInfo": {
+      "firstName": "Kripakaran",
+      "lastName": "Prabhakaran"
+    },
+    "addressInfo": {
+      "streetName": "721 W 30th Street",
+      "aptNumber": "Unit 5",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": 90007
+    },
+    "employmentInfo": {
+      "companyName": "dasd",
+      "position": "dasd",
+      "salary": 12
+    },
+    "educationInfo": {
+      "univName": "dasasd",
+      "degree": "dsad",
+      "gpa": 12
+    },
+    "relationshipInfo": {
+      "status": "sdas",
+      "dependants": 12
+    },
+    "skills": {
+      "hobbies": "dasda",
+      "skills": "sdas"
+    }
+  }
+}

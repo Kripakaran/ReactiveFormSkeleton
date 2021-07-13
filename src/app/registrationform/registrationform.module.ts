@@ -8,6 +8,9 @@ import { EmploymentinformationComponent } from './employmentinformation/employme
 import { EducationinformationComponent } from './educationinformation/educationinformation.component';
 import { RelationshipinformationComponent } from './relationshipinformation/relationshipinformation.component';
 import { SkillinformationComponent } from './skillinformation/skillinformation.component';
+import { FormviewerComponent } from './formviewer/formviewer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegistrationformService } from './containers/registrationform/registrationform.service';
 
 
 
@@ -20,16 +23,20 @@ import { SkillinformationComponent } from './skillinformation/skillinformation.c
     EmploymentinformationComponent,
     EducationinformationComponent,
     RelationshipinformationComponent,
-    SkillinformationComponent
+    SkillinformationComponent,
+    FormviewerComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  exports:
-  [
+  exports:[
     RegistrationformComponent
+  ],
+  providers:[
+    RegistrationformService
   ]
 })
 export class RegistrationformModule { }

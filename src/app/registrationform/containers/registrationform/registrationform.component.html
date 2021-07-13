@@ -1,36 +1,30 @@
 <p>registrationform works!</p>
 
 
-<form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 
+    <div *ngIf="!submitted">
 
-    <app-personalinformation
-    [parent] = "form"
-    ></app-personalinformation>
+        <app-personalinformation [parent]="form"></app-personalinformation>
 
-    <app-addressinformation
-    [parent] = "form"
-    ></app-addressinformation>
+        <app-addressinformation [parent]="form"></app-addressinformation>
 
-    <app-employmentinformation
-    [parent] = "form"
-    ></app-employmentinformation>
+        <app-employmentinformation [parent]="form"></app-employmentinformation>
 
-    <app-educationinformation
-    [parent] = "form"
-    ></app-educationinformation>
+        <app-educationinformation [parent]="form"></app-educationinformation>
 
-    <app-relationshipinformation
-    [parent] = "form"
-    ></app-relationshipinformation>
+        <app-relationshipinformation [parent]="form"></app-relationshipinformation>
 
-    <app-skillinformation
-    [parent] = "form"
-    ></app-skillinformation>
+        <app-skillinformation [parent]="form"></app-skillinformation>
 
+        <button type="submit">
+            Submit
+        </button>
 
-<button type = "submit">
-    Submit
-</button>
+    </div>
+
+    <div *ngIf = "submitted">
+        <app-formviewer [parent] = "form"></app-formviewer>
+    </div>
 
 </form>

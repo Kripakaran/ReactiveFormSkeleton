@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Register } from '../../models/register';
+import { RegistrationformService } from './registrationform.service';
 
 @Component({
   selector: 'app-registrationform',
@@ -8,14 +10,21 @@ import { FormBuilder } from '@angular/forms';
 })
 export class RegistrationformComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private registrationform: RegistrationformService) { }
 
   ngOnInit(): void {
+    // const details = this.registrationform.getDetails().subscribe(res => {
+    //   console.log(res);
+    // });
   }
+
+  registered: Register;
+
+  submitted: boolean = false;
 
   form = this.fb.group({
     personalInfo: this.fb.group({
-      firstName: '',
+      firstName: this.fb.control('', [Validators.required]),
       lastName: ''
     }),
     addressInfo: this.fb.group({
@@ -46,7 +55,13 @@ export class RegistrationformComponent implements OnInit {
   });
 
   onSubmit(){
-    console.log(this.form.value);
+    this.submitted = true;
+    this.registered = Object.assign({}, this.form.value);
+    console.log('the form', this.form.value);
+    console.log('the register object', this.registered);
+    this.registrationform.postDetails(this.registered).subscribe(res=>{
+      console.log(res);
+    });
   }
 
 
