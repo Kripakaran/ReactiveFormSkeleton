@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Register } from '../models/register';
 
 @Component({
   selector: 'app-formviewer',
@@ -14,6 +15,6 @@ export class FormviewerComponent implements OnInit {
   }
 
   @Input()
-  parent: FormGroup;
+  details: Register;
 
 }

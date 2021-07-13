@@ -1,19 +1,17 @@
+import { AddressInfo } from './AddressInfo';
+import { EducationInfo } from './EducationInfo';
+import { EmploymentInfo } from './EmploymentInfo';
+import { PersonalInfo } from './personalInfo';
+import { RelationshipInfo } from './RelationshipInfo';
+import { skills } from './skills';
+
+
+
 export interface Register{
-    firstName: string,
-    lastName: string,
-    streetName: string,
-    aptNumber: string,
-    city: string,
-    state: string,
-    zipCode: number,
-    companyName: string,
-    position: string,
-    salary: number,
-    univName: string,
-    degree: string,
-    gpa: number,
-    status: string,
-    dependants: number,
-    hobbies: string,
-    skills: string
+    personalInfo: PersonalInfo,
+    addressInfo: AddressInfo,
+    employmentInfo: EmploymentInfo,
+    educationInfo: EducationInfo,
+    relationshipInfo: RelationshipInfo,
+    skills: skills
 }

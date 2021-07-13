@@ -6,6 +6,42 @@
     First Name: 
 </div> -->
 
+<div>
+    <h1> Personal Information</h1>
+        <h2>First Name: {{ details.personalInfo.firstName }}</h2>
+        <h2>Last Name: {{ details.personalInfo.lastName }}</h2>
+</div>
+
+<div>
+    <h1> Address Information</h1>
+        <h2>Street Name: {{ details.addressInfo.streetName }}</h2>
+        <h2>Apartment Number: {{ details.addressInfo.aptNumber }}</h2>
+        <h2>City: {{ details.addressInfo.city }}</h2>
+        <h2>State: {{ details.addressInfo.state }}</h2>
+        <h2>Zipcode: {{ details.addressInfo.zipCode }}</h2>
+</div>
+
+<div>
+    <h1> Employment Information</h1>
+        <h2>Company Name: {{ details.employmentInfo.companyName }}</h2>
+        <h2>Position: {{ details.employmentInfo.position }}</h2>
+        <h2>Salary: {{ details.employmentInfo.salary }}</h2>
+</div>
+
+<div>
+    <h1> Education Information</h1>
+        <h2>University Name: {{ details.educationInfo.univName }}</h2>
+        <h2>Degree: {{ details.educationInfo.degree }}</h2>
+        <h2>GPA: {{ details.educationInfo.gpa }}</h2>
+</div>
+
+<div>
+    <h1> Skills and Hobbies</h1>
+        <h2>Skills: {{ details.skills.skills }}</h2>
+        <h2>Hobbies: {{ details.skills.hobbies }}</h2>
+</div>
 
 
-<pre> {{ parent.value | json }}</pre>
+
+
+<!-- <pre> {{ details | json }}</pre> -->

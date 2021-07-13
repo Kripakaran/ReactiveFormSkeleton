@@ -12,22 +12,22 @@
       "zipCode": 90007
     },
     "employmentInfo": {
-      "companyName": "dasd",
-      "position": "dasd",
-      "salary": 12
+      "companyName": "bny",
+      "position": "sde",
+      "salary": 12000
     },
     "educationInfo": {
-      "univName": "dasasd",
-      "degree": "dsad",
-      "gpa": 12
+      "univName": "usc",
+      "degree": "ms",
+      "gpa": 3.5
     },
     "relationshipInfo": {
-      "status": "sdas",
-      "dependants": 12
+      "status": "single",
+      "dependants": 0
     },
     "skills": {
-      "hobbies": "dasda",
-      "skills": "sdas"
+      "hobbies": "music football",
+      "skills": "full stack dev"
     }
   }
 }
