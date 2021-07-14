@@ -1,5 +1,7 @@
 # ReactiveForm
 
+Main branch is a test/speenrun of the angular reactive form guide. Go to `finalform` branch to view a completed rendtion of a reactive registration form styled with Angular Material.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
 
 ## Development server
