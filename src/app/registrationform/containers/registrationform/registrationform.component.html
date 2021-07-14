@@ -2,9 +2,11 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <div *ngIf="!submitted">
-        
-        <h1> Reactive Registration Form</h1>
-        
+
+    <mat-toolbar color="primary">
+        <h1 class="header"> Reactive Registration Form</h1>
+    </mat-toolbar>
+
 
         <mat-vertical-stepper #stepper>
             <mat-step formGroupName="personalInfo">
@@ -13,9 +15,10 @@
         <div *ngIf = "age">
             {{ age }} years old
         </div>
-
-    </mat-step>
+        <button type="button" mat-raised-button matStepperNext>Next</button>
         <mat-divider></mat-divider>
+    </mat-step>
+  
 
 
         <mat-step formGroupName="addressInfo">
@@ -47,11 +50,20 @@
         <mat-step formGroupName="skills">
             <ng-template matStepLabel>Hobbies and Skills</ng-template>
         <app-skillinformation [parent]="form"></app-skillinformation>
+
+        <button type="button" mat-raised-button matStepperPrevious>Back</button>
+        <mat-divider></mat-divider>
         </mat-step>
 
+ 
+
+        &nbsp;
     </mat-vertical-stepper>
 
-       <div> <button type="submit" mat-raised-button color="primary">
+
+       <div class="submit">  
+
+        <button type="submit" mat-raised-button color="primary">
             Submit
         </button>
         </div>

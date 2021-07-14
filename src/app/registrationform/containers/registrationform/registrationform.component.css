@@ -1,3 +1,14 @@
 .formpage{
     background-color: grey;
 }
+
+
+.header{
+    position: absolute;
+    left: 28px;
+
+}
+.submit{
+    position: absolute;
+    left: 60px;
+}

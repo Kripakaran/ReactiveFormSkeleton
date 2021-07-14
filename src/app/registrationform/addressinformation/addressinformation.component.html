@@ -4,35 +4,48 @@
 <div formGroupName = "addressInfo">
 
     <mat-list>
-        <mat-list-item>
-        Street Name:
-        <input type = "text" formControlName = "streetName">
-    </mat-list-item>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Street Name</mat-label>
+        <input matInput placeholder="Enter street name" formControlName = "streetName">
+        </mat-form-field>
 
-<mat-list-item>
-        Apt/Unit Number:
-        <input type = "text" formControlName = "aptNumber">
-    </mat-list-item>
+       &nbsp;
+        <mat-form-field appearance="fill">
+            <mat-label>Apt/Unit Number</mat-label>
+        
+        <input matInput type = "text" formControlName = "aptNumber">
+        </mat-form-field>
+    </div>
 
-<mat-list-item>
-        City:
-        <input type = "text" formControlName = "city">
-    </mat-list-item>
+        <div>
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+        <input matInput type = "text" formControlName = "city">
+        </mat-form-field>
 
-<mat-list-item>
-        State:
-        <input type = "text" formControlName = "state">
-    </mat-list-item>
 
-    <mat-list-item>
-        Zip Code:
-        <input type = "number" formControlName = "zipCode">
-    </mat-list-item>
+        &nbsp;
+        
+        <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+        <input  matInput type = "text" formControlName = "state">
+        </mat-form-field>
+
+        &nbsp;
+
+        <mat-form-field appearance="fill">
+            <mat-label>Zip Code</mat-label>
+        <input matInput type = "number" formControlName = "zipCode">
+        </mat-form-field>
+    </div>
 
 
     </mat-list>
 
+ 
     <button type="button" mat-raised-button matStepperPrevious>Back</button>
+    &nbsp;
     <button type="button" mat-raised-button matStepperNext>Next</button>
 <mat-divider> </mat-divider>
 

@@ -41,18 +41,20 @@
 
             
         <mat-list>
-            <mat-list-item>
-            Hobbies:
-            <input type = "textarea" formControlName = "hobbies">
-        </mat-list-item>
+          <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Hobbies</mat-label>
+            <input type = "textarea" matInput formControlName = "hobbies">
+            </mat-form-field>
+          </div>
 
-        <mat-list-item>
-            Skills:
-            <input type = "textarea" >
-        </mat-list-item>
+          <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Skills</mat-label>
+            <input type = "textarea" matInput formControlName = "skills">
+            </mat-form-field>
+          </div>
 
     </mat-list>
-    <button type="button" mat-raised-button matStepperPrevious>Back</button>
-    <mat-divider>
-    </mat-divider>
+
 </div>

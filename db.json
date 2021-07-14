@@ -1,34 +1,34 @@
 {
   "posts": {
     "personalInfo": {
-      "firstName": "",
-      "lastName": "",
-      "dob": ""
+      "firstName": "Kripakaran",
+      "lastName": "Prabhakaran",
+      "dob": "1997-10-21"
     },
     "addressInfo": {
-      "streetName": "",
-      "aptNumber": "",
-      "city": "",
-      "state": "",
-      "zipCode": ""
+      "streetName": "721 W 30th Street",
+      "aptNumber": "Unit 5",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": 90007
     },
     "employmentInfo": {
-      "companyName": "",
-      "position": "",
-      "salary": ""
+      "companyName": "BNY",
+      "position": "SDE",
+      "salary": 12112
     },
     "educationInfo": {
-      "univName": "",
-      "degree": "",
-      "gpa": ""
+      "univName": "USC",
+      "degree": "MS",
+      "gpa": 3.6
     },
     "relationshipInfo": {
-      "status": "",
-      "dependants": ""
+      "status": "Single",
+      "dependants": 0
     },
     "skills": {
-      "hobbies": "",
-      "skills": ""
+      "hobbies": "Music Soccer Cooking",
+      "skills": "Full Stack Dev"
     }
   }
 }

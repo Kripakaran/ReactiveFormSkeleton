@@ -13,37 +13,51 @@
 
             <div>
                 <mat-list>
-                    <mat-list-item>
-                        First Name:
-                        <input matInput type="text" formControlName="firstName">
-                    </mat-list-item>
+                    <div>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>First Name</mat-label>
+                            <input matInput placeholder="Enter First name" formControlName="firstName" required>
+                          </mat-form-field>
+
+                        </div>
+    
+    
+  
+                <div>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Enter last name" formControlName="lastName" required>
+                        </mat-form-field>
+                        
+                    </div>
+
+                  
+
     
     
     
-                    <mat-list-item>
-                        Last Name:
-                        <input type="text" formControlName="lastName">
-                    </mat-list-item>
-    
-    
-    
-                    <mat-list-item>
-                        Date of Birth:
-                        <input type="date" formControlName="dob">
-    
+                <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Date of Birth</mat-label>
+                        <input matInput type="date" formControlName="dob">
+                        </mat-form-field>
+                        
+                        &nbsp; &nbsp; &nbsp;
                         <button mat-raised-button color="accent" type="button" (click)="sendAge()">
     
                             Calculate Age
                         </button>
     
-                    </mat-list-item>
+                    </div>
     
     
     
                 </mat-list>
 
 
-                <button type="button" mat-raised-button matStepperNext>Next</button>
+                <!-- <button type="button" mat-raised-button matStepperNext>Next</button> -->
     
     
             </div>
