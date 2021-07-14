@@ -3,13 +3,56 @@
 
     <div formGroupName = "skills">
 
-        <h3>Skills and Hobbies</h3>
-        <div>
+
+<!-- 
+        <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+          </button>
+
+
+
+          <mat-stepper  #stepper>
+            <mat-step [stepControl]="getSkills()">
+              <form [formGroup]="getSkills()">
+                <ng-template matStepLabel>Fill out your skills</ng-template>
+                <mat-form-field appearance="fill">
+                  <mat-label>Skills</mat-label>
+                  <input matInput placeholder="Enter Skills here" formControlName = "skills" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+
+
+                <ng-template matStepLabel>Fill out your skills</ng-template>
+                <mat-form-field appearance="fill">
+                  <mat-label>Skills</mat-label>
+                  <input matInput placeholder="Enter Skills here" formControlName = "skills" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+              </mat-step>
+              </mat-stepper> -->
+            
+
+
+
+            
+        <mat-list>
+            <mat-list-item>
             Hobbies:
             <input type = "textarea" formControlName = "hobbies">
-        </div>
+        </mat-list-item>
 
-        <div>
+        <mat-list-item>
             Skills:
-            <input type = "textarea" formControlName = "skills">
-        </div>
+            <input type = "textarea" >
+        </mat-list-item>
+
+    </mat-list>
+    <button type="button" mat-raised-button matStepperPrevious>Back</button>
+    <mat-divider>
+    </mat-divider>
+</div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-skillinformation',
@@ -11,11 +11,21 @@ export class SkillinformationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('hobbies', this.parent.get('skills')?.get('hobbies')?.value);
   }
 
 
   @Input()
   parent: FormGroup;
+
+  getSkills(){
+  return this.parent.get('skills')?.get('skills')?.value;
+}
+
+getHobbies(){
+  return this.parent.get('skills')?.get('hobbies')?.value;
+}
+  isLinear = false;
 
 
 }

@@ -3,18 +3,27 @@
 
     <div formGroupName = "educationInfo">
 
-        <h3>Education Information</h3>
-        <div>
+        <mat-list>
+            <mat-list-item>
             University Name:
             <input type = "text" formControlName = "univName">
-        </div>
+        </mat-list-item>
     
-        <div>
+    <mat-list-item>
             Degree:
             <input type = "text" formControlName = "degree">
-        </div>
+        </mat-list-item>
     
-        <div>
+    <mat-list-item>
             GPA:
             <input type = "number" formControlName = "gpa">
+        </mat-list-item>
+
+        </mat-list>
+
+        <button type="button" mat-raised-button matStepperPrevious>Back</button>
+        <button type="button" mat-raised-button matStepperNext>Next</button>
+
+        
+        <mat-divider></mat-divider>
         </div>

@@ -2,35 +2,63 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <div *ngIf="!submitted">
-
+        
         <h1> Reactive Registration Form</h1>
+        
 
-    
-        <div><app-personalinformation [parent]="form" (dateofbirth) = "calculateAge($event)"></app-personalinformation> 
+        <mat-vertical-stepper #stepper>
+            <mat-step formGroupName="personalInfo">
+                <ng-template matStepLabel>Personal Information</ng-template>
+        <app-personalinformation [parent]="form" (dateofbirth) = "calculateAge($event)"></app-personalinformation> 
         <div *ngIf = "age">
             {{ age }} years old
         </div>
-        
-        </div>
 
-        <div><app-addressinformation [parent]="form"></app-addressinformation></div>
+    </mat-step>
+        <mat-divider></mat-divider>
 
-        <div><app-employmentinformation [parent]="form"></app-employmentinformation></div>
 
-        <div><app-educationinformation [parent]="form"></app-educationinformation></div>
+        <mat-step formGroupName="addressInfo">
+            <ng-template matStepLabel>Address Information</ng-template>
+        <app-addressinformation [parent]="form"></app-addressinformation>
+        </mat-step>
 
-        <div><app-relationshipinformation [parent]="form"></app-relationshipinformation></div>
+   
 
-        <div><app-skillinformation [parent]="form"></app-skillinformation></div>
 
-       <div> <button type="submit">
+        <mat-step formGroupName="employmentInfo">
+            <ng-template matStepLabel>Employment Information</ng-template>
+        <app-employmentinformation [parent]="form"></app-employmentinformation>
+        </mat-step>
+
+
+        <mat-step formGroupName="educationInfo">
+            <ng-template matStepLabel>Education Information</ng-template>
+        <app-educationinformation [parent]="form"></app-educationinformation>
+        </mat-step>
+
+
+        <mat-step formGroupName="relationshipInfo">
+            <ng-template matStepLabel>Relationship Information</ng-template>
+        <app-relationshipinformation [parent]="form"></app-relationshipinformation>
+        </mat-step>
+
+
+        <mat-step formGroupName="skills">
+            <ng-template matStepLabel>Hobbies and Skills</ng-template>
+        <app-skillinformation [parent]="form"></app-skillinformation>
+        </mat-step>
+
+    </mat-vertical-stepper>
+
+       <div> <button type="submit" mat-raised-button color="primary">
             Submit
         </button>
         </div>
 
     </div>
 
-    <div *ngIf = "submitted">
+    <div *ngIf = "submitted" class = "formpage">
         <app-formviewer [details] = "registered"></app-formviewer>
     </div>
 

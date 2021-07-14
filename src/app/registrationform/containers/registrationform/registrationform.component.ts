@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PersonalInfo } from '../../models/personalInfo';
+
 import { Register } from '../../models/register';
 import { RegistrationformService } from './registrationform.service';
 

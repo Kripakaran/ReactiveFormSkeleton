@@ -1,31 +1,59 @@
+<div [formGroup]="parent">
 
-<div [formGroup] = "parent">
-
-<div formGroupName = "personalInfo">
-
-    <h3>Personal Information</h3>
-    <div>
-        First Name:
-        <input type = "text" formControlName = "firstName">
-    </div>
-
-    <div>
-        Last Name:
-        <input type = "text" formControlName = "lastName">
-    </div>
+    <div formGroupName="personalInfo">
 
 
-    <div>
-        Date of Birth:
-        <input type = "date" formControlName = "dob">
+        <!-- <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h3>Personal Information</h3>
+                </mat-panel-title>
+            </mat-expansion-panel-header> -->
 
-        <button type = "button" (click) = "sendAge()">
-            Calculate Age
-        </button>
+            <div>
+                <mat-list>
+                    <mat-list-item>
+                        First Name:
+                        <input matInput type="text" formControlName="firstName">
+                    </mat-list-item>
+    
+    
+    
+                    <mat-list-item>
+                        Last Name:
+                        <input type="text" formControlName="lastName">
+                    </mat-list-item>
+    
+    
+    
+                    <mat-list-item>
+                        Date of Birth:
+                        <input type="date" formControlName="dob">
+    
+                        <button mat-raised-button color="accent" type="button" (click)="sendAge()">
+    
+                            Calculate Age
+                        </button>
+    
+                    </mat-list-item>
+    
+    
+    
+                </mat-list>
+
+
+                <button type="button" mat-raised-button matStepperNext>Next</button>
+    
+    
+            </div>
+        <!-- </mat-expansion-panel>
+        </mat-accordion> -->
+
+       
+
     </div>
 </div>
-</div>
-
 
 
 <!-- <pre>{{ parent.value | json }}</pre> -->

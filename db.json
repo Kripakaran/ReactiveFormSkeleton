@@ -1,19 +1,19 @@
 {
   "posts": {
     "personalInfo": {
-      "firstName": "Kripakaran",
-      "lastName": "Prabhakaran",
-      "dob": "1997-10-21"
+      "firstName": "",
+      "lastName": "",
+      "dob": ""
     },
     "addressInfo": {
-      "streetName": "721 W 30th Street",
-      "aptNumber": "Unit 5",
-      "city": "Los Angeles",
-      "state": "CA",
-      "zipCode": 90007
+      "streetName": "",
+      "aptNumber": "",
+      "city": "",
+      "state": "",
+      "zipCode": ""
     },
     "employmentInfo": {
-      "companyName": "dasd",
+      "companyName": "",
       "position": "",
       "salary": ""
     },

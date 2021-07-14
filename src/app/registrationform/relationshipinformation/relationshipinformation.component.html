@@ -4,13 +4,21 @@
 
     <div formGroupName = "relationshipInfo">
 
-        <h3>Relationship Information</h3>
-        <div>
+
+        <mat-list>
+            <mat-list-item>
             Status:
             <input type = "text" formControlName = "status">
-        </div>
+        </mat-list-item>
         
-        <div>
+         <mat-list-item>
             Dependants:
             <input type = "number" formControlName = "dependants">
+        </mat-list-item>
+
+        </mat-list>
+
+        <button type="button" mat-raised-button matStepperPrevious>Back</button>
+        <button type="button" mat-raised-button matStepperNext>Next</button>
+        <mat-divider></mat-divider>
         </div>
